@@ -83,11 +83,10 @@ const typeScreen = ({navigation, route}) => {
           {couresName}
         </Text>
         <ScrollView>
-          <View style={{flex: 1, alignItems: 'center'}}>
-            {console.log(newSubGradeDetail)}
+          <View style={{flex: 1, alignItems: 'center'}}>        
             {newSubGradeDetail !== null
               ? newSubGradeDetail.map((item, index) => {
-                  console.log(newSubGradeDetail);
+                  // console.log(newSubGradeDetail);
                   return (
                     <TouchableOpacity
                       key={item.csg_id}
