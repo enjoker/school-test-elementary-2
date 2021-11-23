@@ -28,15 +28,7 @@ import testScreen from '../screens/testScreen';
 import scoreScreen from '../screens/scoreScreen';
 import rankingScreen from '../screens/rankingScreen';
 import advertScreen from '../screens/advertScreen';
-
-// import {useRewardedAd} from '@react-native-admob/admob';
-
-const hookOptions = {
-  loadOnDismissed: true,
-  requestOptions: {
-    requestNonPersonalizedAdsOnly: true,
-  },
-};
+import AllAppScreen from '../screens/allAppScreen';
 
 const Navigator = () => {
   const dispatch = useDispatch();
@@ -48,8 +40,9 @@ const Navigator = () => {
     const getUser = async () => {
       try {
         dispatch(userActions.getUser());
-      //  await AsyncStorage.removeItem('user')
-      //  await AsyncStorage.removeItem('privilege')
+      // await AsyncStorage.removeItem('user')
+      // await AsyncStorage.removeItem('privilege')
+      // await AsyncStorage.removeItem('adsTime')
       } catch (error) {
         console.log(error);
       }
@@ -166,6 +159,11 @@ const Navigator = () => {
               name="rename"
               component={renameScreen}
               options={screenOptions}
+            />
+            <Stack.Screen
+              name="AllApp"
+              component={AllAppScreen}
+              options={{title: "ดาวน์โหลดวิชาอื่น ๆ"}}
             />
           </>
         ) : (
